@@ -25,6 +25,9 @@ document.getElementById("newWord").value = "";
 else{
 document.getElementById("newWord").value = "";
 alert("Вы уже добавляли такое слово!");
+  fs=require("fs")
+fs.writeFileSync("txt.txt", "my text",  "ascii")
+
 }
 
 }
