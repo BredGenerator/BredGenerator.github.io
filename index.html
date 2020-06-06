@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Генерация Бреда</title>
+<script>
+
+var words = ["привет", "пока", "вася", "какашка", "унитаз", "жопька"];
+
+function Generate(){
+
+document.getElementById("result").innerHTML = "";
+
+for(var _i = 0; _i < document.getElementById("wordsCount").value; _i++){
+document.getElementById("result").innerHTML = document.getElementById("result").innerHTML + " " + words[Math.floor(Math.random() * (words.length - 0) + 0)];
+}
+
+}
+
+function NewWord(){
+
+if(words.indexOf(document.getElementById("newWord").value) == -1){
+words.push(document.getElementById("newWord").value);
+document.getElementById("newWord").value = "";
+}
+else{
+document.getElementById("newWord").value = "";
+alert("Вы уже добавляли такое слово!");
+}
+
+}
+
+</script>
+<style>
+*{
+padding: 0;
+margin: 0
+}
+</style>
+</head>
+<body>
+
+<div style="width: 100%; background-color: #bdbdbd">
+<h3>Генерация Бреда (создатель: <a href="https://vk.com/omondimon">Dimon Omon (VK)</a>)</h3>
+</div>
+
+<div align="center">
+
+<b>Генератор бреда</b>
+<br>
+<input type="number" id="wordsCount" placeholder="Введите количество слов">
+<br>
+<input onClick="Generate()" type="button" value="Сгенерировать">
+<br>
+<p id="result">Результат</p>
+
+<br>
+<br>
+<input type="text" placeholder="Введите текст" id="newWord">
+<br>
+<input type="button" value="Добавить слово в словарь (до выхода с сайта" onClick="NewWord()">
+
+</div>
+
+</body>
+</html>
